@@ -3,7 +3,7 @@ package com.qa.opencart.pages;
 import com.microsoft.playwright.Page;
 
 public class HomePage {
-    Page page;
+    private Page page;
 
     private String search = "//input[@name='search']";
     private String searchIcon = "//button[@class='btn btn-default btn-lg']";
@@ -13,15 +13,21 @@ public class HomePage {
         this.page=page;
     }
     public String getHomePageTitle() {
-        return page.title();
+        String title= page.title();
+        System.out.println("Home Page Title:"+title);
+        return title;
     }
     public String getHomeUrl(){
-        return page.url();
+        String url = page.url();
+        System.out.println(url);
+        return url;
     }
     public String doSearch(String productName){
         page.fill(search,productName);
         page.click(searchIcon);
-       return page.textContent(searchpageHeader);
+       String header = page.textContent(searchpageHeader);
+       System.out.println("Product Header:"+header);
+       return header;
     }
 
 }
