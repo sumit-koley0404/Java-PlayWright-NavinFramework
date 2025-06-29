@@ -38,14 +38,9 @@ public class PlaywrightFactory {
                 System.out.println("please pass the right browser name...");
                 break;
         }
-        browserContext=browser.newContext();
+        browserContext=browser.newContext(new Browser.NewContextOptions().setViewportSize(1360,617));
         page= browserContext.newPage();
         page.navigate("https://naveenautomationlabs.com/opencart/");
         return page;
-        
-
-
-
-
     }
 }

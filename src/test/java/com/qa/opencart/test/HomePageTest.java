@@ -13,7 +13,7 @@ public class HomePageTest {
     @BeforeMethod
     public void setUp(){
        pf = new PlaywrightFactory();
-       page =pf.initBrowser("safari");
+       page =pf.initBrowser("chrome");
        homePage= new HomePage(page);
     }
     @Test
@@ -38,10 +38,6 @@ public class HomePageTest {
     public void homePageUrl() {
         String actualUrl = homePage.getHomeUrl();
         Assert.assertEquals(actualUrl,"https://naveenautomationlabs.com/opencart/");
-    }
-    @Test
-    public void doSearch(){
-
     }
 
     @AfterMethod
